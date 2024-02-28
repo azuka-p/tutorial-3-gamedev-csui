@@ -1,10 +1,15 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/Player.gd" type="Script" id=2]
 [ext_resource path="res://assets/kenney_platformercharacters/PNG/Zombie/zombie_tilesheet.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31, 45.5 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 240, 0, 80, 110 )
 
 [sub_resource type="AtlasTexture" id=29]
 flags = 4
@@ -28,6 +33,11 @@ region = Rect2( 80, 110, 80, 110 )
 
 [sub_resource type="SpriteFrames" id=26]
 animations = [ {
+"frames": [ SubResource( 31 ) ],
+"loop": true,
+"name": "crouch",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 29 ) ],
 "loop": true,
 "name": "idle",
@@ -53,4 +63,4 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 26 )
-animation = "walk"
+animation = "idle"
